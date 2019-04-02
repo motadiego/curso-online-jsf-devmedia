@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+	<h:form id="formulario">
+		<h:panelGrid columns="2">
+			<f:facet name="header">Dados da Pessoa</f:facet>
+			<h:outputLabel value="Nome" for="nome" />
+			<h:inputText value="#{controleEntrada.nome}" id="nome" />
+			
+			<h:outputLabel value="Senha" for="senha" />
+			<h:inputSecret value="#{controleEntrada.senha}" id="senha" />
+			
+			<h:outputLabel value="Obs" for="obs" />
+			<h:inputTextarea value="#{controleEntrada.observacoes}" cols="30" rows="6" id="obs"/>
+			
+			
+			<h:outputLabel value="Grau instrução" for="grau" />
+			<h:selectOneMenu value="#{controleEntrada.grauInstrucao}" id="grau">
+				<f:selectItem itemLabel="-- Selecione --" noSelectionOption="true" />
+				<!-- ESTATICO
+				 <f:selectItem itemLabel="Ensino Fundamental" itemValue="Ensino Fundamental" />
+				<f:selectItem itemLabel="Ensino Medio" itemValue="Ensino Medio" />
+				<f:selectItem itemLabel="Ensino Superior" itemValue="Ensino Superior" /> -->
+				<f:selectItems value="#{controleEntrada.graus}" var="grau" itemValue="#{grau}" itemLabel="#{grau}" />
+			</h:selectOneMenu>
+			
+			<h:outputLabel value="Grau instrução" for="grau2" />
+			<h:selectOneRadio value="#{controleEntrada.grauInstrucao}" id="grau2">
+				<f:selectItems value="#{controleEntrada.graus}" var="grau" itemValue="#{grau}" itemLabel="#{grau}" />
+			</h:selectOneRadio>
+			
+			<h:outputLabel value="Grau instrução" for="grau3" />
+			<h:selectOneListbox value="#{controleEntrada.grauInstrucao}" id="grau3">
+				<f:selectItems value="#{controleEntrada.graus}" var="grau" itemValue="#{grau}" itemLabel="#{grau}" />
+			</h:selectOneListbox>
+			
+			
+			<h:outputLabel value="Tecnologias" for="tecnololgias" />
+			<h:selectManyListbox value="#{controleEntrada.tecnologiasSelecionadas}" id="tecnologias">
+				<f:selectItems value="#{controleEntrada.tecnologias}" var="tec" itemValue="#{tec}" itemLabel="#{tec}" />
+			</h:selectManyListbox>
+			
+			<h:outputLabel value="Tecnologias" for="tecnololgias2" />
+			<h:selectManyCheckbox value="#{controleEntrada.tecnologiasSelecionadas}" id="tecnologias2">
+				<f:selectItems value="#{controleEntrada.tecnologias}" var="tec" itemValue="#{tec}" itemLabel="#{tec}" />
+			</h:selectManyCheckbox>
+			
+			
+			<h:column>
+				<div align="center">
+					<h:commandButton action="#{controleEntrada.processa}" value="Processar" />
+				</div>
+			</h:column>
+		</h:panelGrid>
+	
+	</h:form>
+	
+	<h:outputText value="#{controleEntrada.saida}" escape="false" />
+	
+</h:body> 
+</html>
