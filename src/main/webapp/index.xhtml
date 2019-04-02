@@ -1,14 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+  <!-- meta tags obrigatorias -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-<h:head></h:head> 
-<body> 
-Páigna inicial do projeto!!!
+  <title>Hello World com Bootstrap</title>
 
-<h:outputText value="#{indexController.mensagem}" />
-
-</body> 
+  <!-- CSS do Bootstrap -->
+  <link rel="stylesheet" href="./resources/externo/bootstrap-4/css/bootstrap.min.css" />
+</h:head>
+<h:body> 
+   
+  <div class="container text-center">
+   	<h:form>
+	    <h1 class="display-3 m-5">Hello, Bootstrap!</h1>
+	    <p class="lead">
+	      Use este documento como um template para iniciar qualquer projeto novo.<br />
+	      Tudo o que tem aqui é esse texto e um HTML inicial, bem básico.
+	    </p>
+	    <p class="lead">
+	    	<h:commandLink action="#{controleComponentes.componentes2()}" value="Componentes 2 ->" />    
+	    </p>
+	    
+    </h:form> 
+    
+  </div>
+  
+  <script src="./resources/externo/jquery/jquery.3.2.1.min.js"></script>
+  <script src="./resources/externo/popper/dist/popper.min.js"></script>
+  <script src="./resources/externo/bootstrap-4/js/bootstrap.js"></script>
+ 
+</h:body>
 </html>

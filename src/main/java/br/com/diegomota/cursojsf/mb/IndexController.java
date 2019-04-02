@@ -1,4 +1,4 @@
-package br.com.diegomota.cursojsf;
+package br.com.diegomota.cursojsf.mb;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
