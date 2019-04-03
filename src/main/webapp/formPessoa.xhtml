@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+
+	<h:form id="formulario">
+		<h:messages />
+		
+		<h:panelGroup rendered="#{controlePessoa.opcaoSelecionado == false}">
+			Selecione o tipo de pessoa
+			<h:selectOneRadio value="#{controlePessoa.pessoaFisica}" layout="lineDirection" onchange="submit();" valueChangeListener="#{controlePessoa.tipoChange}">
+				<f:selectItem  itemLabel="Pessoa Fisica" itemValue="true" />
+				<f:selectItem  itemLabel="Pessoa Juridica" itemValue="false" />
+			</h:selectOneRadio>
+		</h:panelGroup>
+		
+		<h:panelGroup rendered="#{controlePessoa.opcaoSelecionado}">
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome" for="nome" rendered="#{controlePessoa.pessoaFisica}"/>
+				<h:inputText value="#{controlePessoa.nome}" id="nome" rendered="#{controlePessoa.pessoaFisica}"/>
+			
+				<h:outputLabel value="Cpf" for="cpf" rendered="#{controlePessoa.pessoaFisica}"/>
+				<h:inputText value="#{controlePessoa.cpf}" id="cpf" rendered="#{controlePessoa.pessoaFisica}"/>
+				
+				<h:outputLabel value="Razão social" for="razao" rendered="#{!controlePessoa.pessoaFisica}"/>
+				<h:inputText value="#{controlePessoa.nome}" id="razao" rendered="#{!controlePessoa.pessoaFisica}"/>
+				
+				<h:outputLabel value="Cnpj" for="cnpj" rendered="#{!controlePessoa.pessoaFisica}"/>
+				<h:inputText value="#{controlePessoa.cnpj}" id="cnpj" rendered="#{!controlePessoa.pessoaFisica}"/>
+				
+			</h:panelGrid>
+			
+			<h:commandButton action="#{controlePessoa.exibirDados}" value="Cadastrar" />
+			<h:commandButton action="#{controlePessoa.voltar}" value="Voltar" />
+			
+		</h:panelGroup>
+	</h:form>
+
+</h:body> 
+</html>
