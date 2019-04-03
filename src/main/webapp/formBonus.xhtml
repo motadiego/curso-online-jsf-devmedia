@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+	
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Nome" for="nome" />
+			<h:inputText value="#{controleBonus.nome}" id="nome"/>
+			
+			<h:outputLabel value="Salario" for="salario" />
+			<h:inputText value="#{controleBonus.salario}" id="salario"/>
+			
+			<h:outputLabel value="Cargo" for="cargo" />
+			<h:selectOneMenu value="#{controleBonus.cargo}">
+				<f:selectItem itemLabel="Gerente" itemValue="0"></f:selectItem>
+				<f:selectItem itemLabel="Vendedor" itemValue="1"></f:selectItem>
+				<f:selectItem itemLabel="Empacotador" itemValue="2"></f:selectItem>
+			</h:selectOneMenu>
+			
+			<h:commandButton action="#{controleBonus.dadosBonus()}" value="Calcular"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+	
+	
+	<h:link outcome="dadosBonus" value="Calcular" includeViewParams="true">
+		<f:param name="cargo" value="0" />
+		<f:param name="nome" value="Jeorge"/>
+		<f:param name="salario" value="1000.00"/>
+	</h:link>
+	
+</h:body> 
+</html>

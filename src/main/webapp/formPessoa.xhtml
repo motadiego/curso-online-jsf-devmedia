@@ -32,10 +32,12 @@
 				<h:outputLabel value="Cnpj" for="cnpj" rendered="#{!controlePessoa.pessoaFisica}"/>
 				<h:inputText value="#{controlePessoa.cnpj}" id="cnpj" rendered="#{!controlePessoa.pessoaFisica}"/>
 				
+				<h:commandButton action="#{controlePessoa.exibirDados}" value="Cadastrar" />
+				<h:commandButton action="#{controlePessoa.voltar}" value="Voltar" />
+				
 			</h:panelGrid>
 			
-			<h:commandButton action="#{controlePessoa.exibirDados}" value="Cadastrar" />
-			<h:commandButton action="#{controlePessoa.voltar}" value="Voltar" />
+			
 			
 		</h:panelGroup>
 	</h:form>

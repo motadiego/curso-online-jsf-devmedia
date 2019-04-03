@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<f:view>
+	<f:metadata>
+		<f:viewParam name="cargo" value="#{controleBonus.cargo}" />
+		<f:viewParam name="nome" value="#{controleBonus.nome}" />
+		<f:viewParam name="salario" value="#{controleBonus.salario}" />
+		<!-- ao entra na página, chama o metodo calcular() -->
+		<f:viewAction action="#{controleBonus.calcular()}" />
+	</f:metadata>
+	<h:head>Dados do bônus</h:head> 
+	<h:body> 
+		
+		<h:panelGrid columns="2"> 
+			<h:outputText value="Cargo: " />
+			<h:outputLabel value="#{controleBonus.cargo}" />
+			<h:outputText value="Nome: " />
+			<h:outputLabel value="#{controleBonus.nome}" />
+			<h:outputText value="Salário: " />
+			<h:outputLabel value="#{controleBonus.salario}" />
+			<h:outputText value="Bônus:" />
+			<h:outputLabel value="#{controleBonus.bonus}" />
+		</h:panelGrid>
+	</h:body> 
+</f:view>
+</html>
