@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+		
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NOME</th>
+				<th>TELEFONE</th>
+			</tr>
+			<ui:repeat var="pessoa" value="#{controleTabela.lista}">
+				<tr>
+					<td><h:outputText value="#{pessoa.id}" /></td>
+					<td><h:outputText value="#{pessoa.nome}" /></td>
+					<td><h:outputText value="#{pessoa.telefone}" /></td>
+				</tr>
+			</ui:repeat>
+		</table>
+		
+</h:body> 
+</html>
