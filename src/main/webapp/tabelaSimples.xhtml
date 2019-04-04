@@ -6,7 +6,9 @@
 
 <h:head></h:head> 
 <h:body> 
-	<h:dataTable value="#{controleTabela.lista}" var="pessoa">
+	<h:dataTable value="#{controleTabela.lista}" var="pessoa" frame="box" rules="all" cellpadding="3">
+			<f:facet name="caption">Listagem de pessoas</f:facet>
+			<f:facet name="footer">Total de pessoas: #{controleTabela.lista.size()} </f:facet>
 			<h:column>
 				<f:facet name="header">
 					Id
