@@ -11,6 +11,13 @@
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Nascimento" />
 			<h:inputText value="#{controleAulaConversores.nascimento}" converter="#{converterCalendar}" />
+			
+			<h:outputText value="Cidade" />
+			<h:selectOneMenu value="#{controleAulaConversores.cidade}" converter="#{controleAulaConversores.converterCidade}">
+				<f:selectItems value="#{controleAulaConversores.listaCidades}" var="cidade" itemLabel="#{cidade.nome} / #{cidade.uf}" />
+				
+			</h:selectOneMenu>
+						
 			<f:facet name="footer">
 				<h:commandButton value="Enviar" action="#{controleAulaConversores.lerDados()}" />
 			</f:facet>
