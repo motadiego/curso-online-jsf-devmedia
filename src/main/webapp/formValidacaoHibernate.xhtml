@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head> Validação com hibernate</h:head> 
+<h:body> 
+	
+	
+	<h:form prependId="false">
+		<h:messages />
+	
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Nome" for="nome" />	
+			<h:inputText value="#{controleValidacaoHibernate.nome}" id="nome" size="40" />
+			<h:message for="nome"/>
+			
+			<h:outputLabel value="Telefone" for="telefone" />	
+			<h:inputText value="#{controleValidacaoHibernate.telefone}" id="felefone" size="14" />
+			<h:message for="felefone"/>
+			
+			<h:outputLabel value="Email" for="email" />	
+			<h:inputText value="#{controleValidacaoHibernate.email}" id="email" size="40"/>
+			<h:message for="email"/>
+			
+			<h:outputLabel value="Idade" for="idade" />	
+			<h:inputText value="#{controleValidacaoHibernate.idade}" id="idade" size="3"/>	
+			<h:message for="idade"/>
+			
+			<h:outputLabel value="Nota" for="nota" />	
+			<h:inputText value="#{controleValidacaoHibernate.nota}" id="nota" size="4"/>
+			<h:message for="nota"/>
+			
+			<h:commandButton action="#{controleValidacaoHibernate.processaDados}" value="Enviar"/>
+					
+		</h:panelGrid>
+		
+		
+	</h:form>
+		
+	
+</h:body> 
+</html>
