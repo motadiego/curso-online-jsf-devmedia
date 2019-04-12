@@ -1,11 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
+	 <!-- meta tags obrigatorias -->
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
 	<title><ui:insert name="tituloJanela" /></title>
+	
+	<!-- CSS do Bootstrap -->
+   <link rel="stylesheet" href="./resources/externo/bootstrap-4/css/bootstrap.min.css" />
+	
 	<h:outputStylesheet library="css" name="estilos.css"/>
 </h:head>
 <h:body>
@@ -21,5 +29,10 @@
 		
 		</ui:insert>
 	</div>
+	
+    <script src="./resources/externo/jquery/jquery.3.2.1.min.js"></script>
+   <script src="./resources/externo/popper/dist/popper.min.js"></script>
+   <script src="./resources/externo/bootstrap-4/js/bootstrap.js"></script>
+	
 </h:body>
 </html>

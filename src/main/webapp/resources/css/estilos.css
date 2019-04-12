@@ -68,7 +68,7 @@
 	background: powderblue;
 }
 
-.titulo {
+.tituloCabecalho{
 	font-size: 1.4em;
 	font-style: italic;
 	font-family: Palatino;
@@ -77,7 +77,6 @@
 
 #cabecalho {
 	padding: 20px;
-	height: 30px;
 	margin-bottom: 10px;
 	background: #dddddd;
 	border: 1px solid darkGray;
@@ -86,8 +85,9 @@
 #barraEsquerda {
 	border: thin solid lightGray;
 	padding: 5px;
-	width: 150px;
+	width: 220px;
 	background: #eeeeeee;
+	min-height: 400px;
 }
 
 #conteudo {
@@ -96,9 +96,9 @@
 	background: #fefeef;
 	position: absolute;
 	right: 8px;
-	left: 180px;
-	height: 400px;
-	top: 90px;	
+	left: 230px;
+	min-height: 400px;
+	top: 86px;	
 }
 
 

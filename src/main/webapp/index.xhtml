@@ -1,48 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-  <!-- meta tags obrigatorias -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-  <title>Hello World com Bootstrap</title>
-
-  <!-- CSS do Bootstrap -->
-  <link rel="stylesheet" href="./resources/externo/bootstrap-4/css/bootstrap.min.css" />
-</h:head>
-<h:body> 
-   
-  <div class="container text-center">
-   	<h:form>
-	    <h1 class="display-3 m-5">Hello, Bootstrap!</h1>
-	    <p class="lead">
-	      Use este documento como um template para iniciar qualquer projeto novo.<br />
-	      Tudo o que tem aqui é esse texto e um HTML inicial, bem básico.
-	    </p>
-	    <p class="lead">
-	    	<h:commandLink action="#{controleComponentes.componentes2()}" value="Componentes 2 ->" /> <br/>   
-	        <h:commandLink action="#{controleEntrada.componentes5()}" value="Componentes 5 ->" />  <br/> 
-	        <h:commandLink action="#{controlePessoa.entrarForm()}" value="Formulário Pessoa ->" />  <br/> 
-	        <h:commandLink action="#{controleBonus.entrarForm()}" value="Calculo Bônus ->" />  <br/> 
-	        <h:commandLink action="#{controleTabela.entrarTabela()}" value="Tabela ui:repeat ->" />  <br/> 
-	        <h:commandLink action="#{controleTabela.entrarTabelaSimples()}" value="Tabela datatable ->" />  <br/>
-	        <h:commandLink action="#{controleValidacao.entrarForm()}" value="Validação de campos padrão JSF 2 ->" />  <br/>  
-	        <h:commandLink action="#{controleValidacaoHibernate.entrarForm()}" value="Bean Validation API /Hibernate  ->" />  <br/> 
-	        <h:commandLink action="#{controleUsuario.entrarForm()}" value="Bean Validation API /Hibernate (form usuário) ->" />  <br/> 
-	        <h:commandLink action="#{controlePagamento.entrarForm()}" value="Conversão (Pagamento) -> " />  <br/> 
-	          <h:commandLink action="#{controleAulaConversores.entrarForm()}" value="Conversores customizados -> " />  <br/> 
-	    </p>
-	    
-    </h:form> 
-    
-  </div>
-  
-  <script src="./resources/externo/jquery/jquery.3.2.1.min.js"></script>
-  <script src="./resources/externo/popper/dist/popper.min.js"></script>
-  <script src="./resources/externo/bootstrap-4/js/bootstrap.js"></script>
- 
-</h:body>
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="tituloJanela">Sistema com JSF 2.0 e Facelets</ui:define>
+		<ui:define name="conteudo">
+			 <div class="text-center">
+			 	<h1 class="display-3 m-5">Hello, Bootstrap!</h1>
+			   	 <p class="lead">
+			      Use este documento como um template para iniciar qualquer projeto novo.<br />
+			      Tudo o que tem aqui é esse texto e um HTML inicial, bem básico.
+			    </p>
+			 </div>
+		</ui:define>
+	</ui:composition>
 </html>
