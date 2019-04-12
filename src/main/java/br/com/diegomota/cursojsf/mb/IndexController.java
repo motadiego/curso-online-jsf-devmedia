@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+@Controller("indexController")
 @Scope(value="request")
 public class IndexController {
 	
@@ -14,9 +14,13 @@ public class IndexController {
 		mensagem = "Ola mundo 2"; 
 	}
 	
+	public String home() {
+		return "index.jsf";
+	}
+	
 	@RequestMapping("*/")
 	private String index() {
-		return "index.xhtml";
+		return "index.jsf";
 	}
 
 	public String getMensagem() {
