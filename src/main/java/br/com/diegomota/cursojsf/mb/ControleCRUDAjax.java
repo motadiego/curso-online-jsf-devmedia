@@ -3,10 +3,14 @@ package br.com.diegomota.cursojsf.mb;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import br.com.diegomota.cursojsf.dominio.PessoaAjax;
+import br.com.diegomota.cursojsf.utils.Uteis;
 
 @Component("controleCRUDAjax")
 @Scope("view")
@@ -44,6 +48,8 @@ public class ControleCRUDAjax {
 			lista.add(objeto);
 		}
 		
+		FacesMessage msg = new FacesMessage(Uteis.getMsg("crud.sucesso.salvar"));
+		FacesContext.getCurrentInstance().addMessage("", msg);
 		editando = false;
 	}
 	

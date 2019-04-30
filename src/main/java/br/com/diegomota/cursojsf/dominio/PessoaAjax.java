@@ -11,12 +11,12 @@ public class PessoaAjax implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	@NotEmpty(message="O nome deve ser informado")
-	@Length(max=40, message="O nome não deve ultrapassar {max} caracteres")
+	@NotEmpty(message="{crud.pessoa.nome.notempty}")
+	@Length(max=40, message="{crud.pessoa.nome.tamanho}")
 	private String nome;
 	
-	@NotEmpty(message="O Email deve ser informado")
-	@Email(message="Informe um email valido")
+	@NotEmpty(message="{crud.email.notempty}")
+	@Email(message="{crud.email}")
 	private String email;
 	
 	public PessoaAjax() {
