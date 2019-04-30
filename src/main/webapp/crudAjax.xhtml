@@ -8,6 +8,76 @@
 	  	<ui:define name="tituloJanela">Crud AJAX</ui:define>
 		<ui:define name="conteudo">
 			
+			<h:form id="form">
+				<h:messages />
+				
+				<h:panelGroup rendered="#{!controleCRUDAjax.editando}">
+					<h:dataTable value="#{controleCRUDAjax.lista}" var="obj" id="lista" frame="box" rules="all" cellpadding="3">
+							<f:facet name="header">
+								<h:commandButton action="#{controleCRUDAjax.novo()}" value="Novo">
+									<f:ajax execute="@form" render="@form" />
+								</h:commandButton>
+							</f:facet>
+							<h:column>
+								<f:facet name="header">ID</f:facet>
+								<h:outputText value="#{obj.id}"/>
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">NOME</f:facet>
+								<h:outputText value="#{obj.nome}"/>
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">EMAIL</f:facet>
+								<h:outputText value="#{obj.email}"/>
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">Alterar</f:facet>
+								<h:commandLink action="#{controleCRUDAjax.alterar(obj)}" value="Alterar">
+									<f:ajax execute="@form" render="@form"></f:ajax>
+								</h:commandLink>
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">Excluir</f:facet>
+								<h:commandLink action="#{controleCRUDAjax.excluir(obj)}" value="Excluir" onclick="if (!confirm('Confirma a exclusão ?')) return false;">
+									<f:ajax execute="@form" render="@form"></f:ajax>
+								</h:commandLink>
+							</h:column>
+						
+					
+					</h:dataTable>	
+				</h:panelGroup>
+				
+				
+				<h:panelGroup rendered="#{controleCRUDAjax.editando}">
+					<h:panelGrid columns="2">
+						<f:facet name="header">Edição de pessoas</f:facet>
+						<f:facet name="footer">
+							<div align="center">
+								<h:commandButton action="#{controleCRUDAjax.cancelar()}" value="Cancelar" immediate="true">
+									<f:ajax execute="@form" render="@form"/>
+								</h:commandButton>
+								<h:commandButton action="#{controleCRUDAjax.salvar()}" value="Salvar">
+									<f:ajax execute="@form" render="@form"/>
+								</h:commandButton>
+							</div>
+						</f:facet>
+						
+						<h:outputLabel value="ID" />
+						<h:inputText value="#{controleCRUDAjax.objeto.id}" readonly="true"/>
+						
+						<h:outputLabel value="NOME" />
+						<h:inputText value="#{controleCRUDAjax.objeto.nome}"/>
+						
+						<h:outputLabel value="EMAIL" />
+						<h:inputText value="#{controleCRUDAjax.objeto.email}"/>
+					</h:panelGrid>		
+				</h:panelGroup>
+			</h:form>
+			
 		</ui:define>
 	</ui:composition> 	
 </html>	
